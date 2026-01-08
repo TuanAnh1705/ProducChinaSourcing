@@ -159,12 +159,12 @@ const Footer = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Enter your email"
-                                    className="flex-1 border border-[#E5E5E5] px-4 py-2 md:px-6 md:py-2 rounded-sm focus:outline-none text-sm focus:border-[#2E3590] transition-colors"
+                                    className="flex-1 border border-[#E5E5E5] px-2 py-2 md:px-6 md:py-2 rounded-sm focus:outline-none text-sm focus:border-[#2E3590] transition-colors"
                                 />
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="bg-[#2E3590] text-white px-4 py-2 md:px-8 md:py-3 rounded-sm text-sm font-medium hover:bg-blue-900 transition-all disabled:opacity-50 cursor-pointer"
+                                    className="bg-[#2E3590] text-white px-2 py-2 md:px-8 md:py-3 rounded-sm text-sm font-medium hover:bg-blue-900 transition-all disabled:opacity-50 cursor-pointer"
                                 >
                                     {isSubmitting ? "..." : "Submit"}
                                 </button>
