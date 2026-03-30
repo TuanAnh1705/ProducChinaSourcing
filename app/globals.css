@@ -134,10 +134,20 @@
     max-width: 100vw;
   }
 
-  /* Ensure all images don't cause overflow */
+  /* Disable text selection across the entire site */
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Disable image dragging */
   img {
     max-width: 100%;
     height: auto;
+    -webkit-user-drag: none;
+    pointer-events: none;
   }
 
   /* Fix for shadcn Select component to prevent overflow */

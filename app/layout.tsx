@@ -32,6 +32,21 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: `
+          document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+          document.addEventListener('keydown', function(e) {
+            if (
+              e.key === 'F12' ||
+              (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+              (e.ctrlKey && e.key === 's') ||
+              (e.ctrlKey && e.key === 'u') ||
+              (e.ctrlKey && e.key === 'p')
+            ) {
+              e.preventDefault();
+            }
+          });
+          document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+        `}} />
         <SearchProvider>
           <SearchHeader />
           <Toaster
