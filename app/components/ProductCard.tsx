@@ -12,14 +12,16 @@ interface ProductCardProps {
   showButton?: boolean;
   showSku?: boolean;
   showPriceUnit?: boolean;
+  priority?: boolean;
 }
 
-export function ProductCard({ 
-  product, 
-  showSpecs = true, 
-  showButton = true, 
-  showSku = true, 
-  showPriceUnit = true 
+export function ProductCard({
+  product,
+  showSpecs = true,
+  showButton = true,
+  showSku = true,
+  showPriceUnit = true,
+  priority = false
 }: ProductCardProps) {
 
   const [api, setApi] = useState<CarouselApi>();
@@ -62,6 +64,8 @@ export function ProductCard({
                     className="object-cover transition-transform duration-700"
                     unoptimized
                     draggable={false}
+                    loading={priority && idx === 0 ? 'eager' : 'lazy'}
+                    priority={priority && idx === 0}
                   />
                 </Link>
               </CarouselItem>

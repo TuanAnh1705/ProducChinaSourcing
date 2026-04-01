@@ -99,8 +99,8 @@ export default function HomeClient({ initialData }: Props) {
         <section className="flex-1">
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
-              {filteredProducts.map((p) => (
-                <ProductCard key={p.sku} product={p} />
+              {filteredProducts.map((p, idx) => (
+                <ProductCard key={p.sku} product={p} priority={idx < 4} />
               ))}
             </div>
           ) : (

@@ -8,7 +8,7 @@ export class ProductService {
     private formatImg(url: any): string {
         if (!url || typeof url !== 'string') return "";
         const idMatch = url.match(/(?:\/d\/|id=)([\w-]+)/);
-        return idMatch ? `https://lh3.googleusercontent.com/d/${idMatch[1]}` : "";
+        return idMatch ? `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000` : "";
     }
 
     private getUniqueSplitValues(rows: any[], columnName: string): string[] {
