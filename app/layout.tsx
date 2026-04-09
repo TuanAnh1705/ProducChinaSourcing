@@ -6,6 +6,7 @@ import { SearchHeader } from "./components/SearchHeader";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import { ScrollToTop } from "./components/ScrollToTop";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,6 +32,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16741349124"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16741349124');
+          `}
+        </Script>
+      </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: `
           document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
